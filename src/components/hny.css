@@ -1,0 +1,390 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+/* happy new year effect */
+.text{
+    width: 100%;
+    text-align: center;
+    font-size: 85px;
+    font-family:'Sevillana rev=1' ;
+    font-style:italic;
+    font-weight: 900;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    color: rgba(255, 0, 51, 0.822);
+    opacity: -1;
+    animation: glow 1s linear infinite;
+    visibility: hidden;
+    animation-delay: 6s;
+    opacity: 0.5;
+}
+/* #t{
+    visibility: hidden;
+    animation-delay: 6s;
+    opacity: 0.5;
+} */
+@keyframes glow{
+    50%{
+        text-shadow: 0 0 1vw rgb(189, 36, 67) ,0 0 4vw rgb(23, 13, 100),0 0 6vw rgb(255, 234, 0),0 0 4vw #fed641,0 0 1vw #ff69b4;
+        color: #ff633347; visibility: visible; opacity: 1;
+    }
+    0%,
+    100%{
+        text-shadow: 0 0 1.5vw #f10a21cb,0 0 4vw #efd007,0 0 6vw #ff00e6,0 0 4vw #001cf4,0 0 1vw #ff3366,0 0 0.5vw #8f2626;
+        color: #ff3333;opacity: 1;
+        
+    }
+}
+
+.year{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+   font-family: 'Sevillana rev=1';
+    font-style: italic;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    /* padding: 10px 100px; */
+}
+.year>span{
+    font-family: 'Sevillana rev=1';
+    font-size: 140px;
+    color: rgba(0, 89, 255, 0.864);
+}
+span.two{
+    position: absolute;
+    right: 50%;
+    margin-right: -180px;
+    animation: two_2022 5s ease-in-out 5s forwards;
+}
+span.three{
+    position: absolute;
+    right: 0%;
+    margin-right: -180px;
+    animation: three_2023 6s ease-in-out forwards;
+}
+span.three::before{
+    content: '';
+    width: 0px;
+    height: 5px;
+    display: block;
+    border-radius: 3px;
+    background: #9ccaebae;
+    transform: rotate(0deg);
+    transform-origin: left top;
+    position: absolute;
+    top: 45px;
+    left: 50px;
+    z-index: 1;
+    animation: en-bal 1s ease-in-out 4s;
+}
+.bal{
+    width: 100px;
+    height: 100px;
+    display: block;
+    background: #e8d57a;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    margin-top: -200px;
+    right: 0%;
+    margin-right: -200px;
+     animation: bal 10s ease-in-out forwards;
+}
+.bal::before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 20px 10px;
+    border-color: transparent transparent #b19b32 transparent;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    bottom: -10px;
+    z-index: -1;
+}
+.bal:after{
+    content: '';
+    width: 4px;
+    height: 100px;
+    display: block;
+    background: #fff;
+    border-radius: 0px 0px 3px 3px;
+    position: absolute;
+    left: 50%;
+    margin-left: -2px;
+    bottom: -100px;
+}
+@keyframes three_2023{
+    0%{right:0%;}
+    66.66%{right: 50%;margin-right: -250px;}
+    98%{right: 50%;margin-right: -250px;}
+    100%{right: 50%;}
+}
+@keyframes two_2022{
+    0%{top: 53%;}
+    /* 50%{top: 10%;} */
+    /* 100%{right: -100%;} */
+    100%{top: -100%;right: 50%;}
+}
+@keyframes bal{
+    0%{right: 0%;}
+    40%{right: 49%;margin-right: -250px;}
+    50%{right: 49%;margin-right: -180px;top: 59%;}
+    100%{top: -100%;right: 49%;}
+}
+@keyframes en-bal{
+    0%{transform: rotate(-30deg);width: 40px;}
+    100%{transform: rotate(-150deg);width: 70px;}
+}
+.card{
+    width: 100%;
+    height: 100%;
+    /* background: #222048; */
+    background-image: url(R\ \(3\).jpeg);
+    color: white;
+    position: absolute;
+    
+}
+
+/* .card .front{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #222048;
+    transition: all 1s ease-in-out;
+    transform-origin: center left;
+    transform: perspective(700) rotate(0);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform-style: preserve-3d;
+} */
+/*firework1*/
+.card .front .firework1{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border: 3.5px dotted #ff0000;
+    border-radius: 100%;
+    top: 150px;
+    left: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: firework 1.5s ease-in-out infinite;
+    transition-timing-function: cubic-bezier(0,0.15,1,-2.7);
+    visibility: hidden;
+    animation-delay: 6s;
+    opacity: 0.5;
+}
+.card .front .firework2 .circle1{
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    border: 3.5px dotted #0DC200;
+    position: absolute;
+
+}
+.card .front .firework2 .circle2{
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
+    border: 3.5px dotted #FFF719;
+    position: absolute;
+}
+.card .front .firework2 .circle3{
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    border: 3.5px dotted #FF0000;
+    position: absolute;
+}
+.card .front .firework2 .circle4{
+    width: 30%;
+    height: 30%;
+    border-radius: 100%;
+    border: 3.5px dotted #0DC200;
+    position: absolute;
+}
+.card .front .firework2 .circle5{
+    width: 15%;
+    height: 15%;
+    border-radius: 100%;
+    border: 3.5px dotted #FF0000;
+}
+
+/*firework 2*/
+.card .front .firework2{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border: 3.5px dotted #ff0000;
+    border-radius: 100%;
+    top: 100px;
+    right: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: firework 2s ease-in-out infinite;
+    visibility: hidden;
+    animation-delay: 6s;
+    opacity: 0.5;
+    transition-timing-function: cubic-bezier(0,0.15,1,-2.7);
+}
+.card .front .firework1 .circle1{
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    border: 3.5px dotted #0DC200;
+    position: absolute;
+    
+}
+.card .front .firework1 .circle2{
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
+    border: 3.5px dotted #FFF719;
+    position: absolute;
+}
+.card .front .firework1 .circle3{
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    border: 3.5px dotted #FF0000;
+    position: absolute;
+}
+.card .front .firework1 .circle4{
+    width: 30%;
+    height: 30%;
+    border-radius: 100%;
+    border: 3.5px dotted #0DC200;
+    position: absolute;
+}
+.card .front .firework1 .circle5{
+    width: 15%;
+    height: 15%;
+    border-radius: 100%;
+    border: 3.5px dotted #FF0000;
+}
+
+/*firework 3*/
+.card .front .firework3{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border: 3.5px dotted #ff0000;
+    border-radius: 100%;
+    top: 50%;
+    right: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: firework 2.5s ease-in-out infinite;
+    transition-timing-function: cubic-bezier(0,0.15,1,-2.7);
+}
+.card .front .firework3 .circle1{
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    border: 3.5px dotted #0DC200;
+    position: absolute;
+}
+.card .front .firework3 .circle2{
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
+    border: 3.5px dotted #FFF719;
+    position: absolute;
+}
+.card .front .firework3 .circle3{
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    border: 3.5px dotted #FF0000;
+    position: absolute;
+}
+.card .front .firework3 .circle4{
+    width: 30%;
+    height: 30%;
+    border-radius: 100%;
+    border: 3.5px dotted #0DC200;
+    position: absolute;
+}
+.card .front .firework3 .circle5{
+    width: 15%;
+    height: 15%;
+    border-radius: 100%;
+    border: 3.5px dotted #FF0000;
+}
+
+/*firework 4*/
+
+.card .front .firework4{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    border: 3.5px dotted #ff0000;
+    border-radius: 100%;
+    top: 55%;
+    left: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: firework 2s ease-in-out infinite;
+    transition-timing-function: cubic-bezier(0,0.15,1,-2.7);
+}
+.card .front .firework4 .circle1{
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    border: 3.5px dotted #0DC200;
+    position: absolute;
+}
+.card .front .firework4 .circle2{
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
+    border: 3.5px dotted #FFF719;
+    position: absolute;
+}
+.card .front .firework4 .circle3{
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    border: 3.5px dotted #FF0000;
+    position: absolute;
+}
+.card .front .firework4 .circle4{
+    width: 30%;
+    height: 30%;
+    border-radius: 100%;
+    border: 3.5px dotted #0DC200;
+    position: absolute;
+}
+.card .front .firework4 .circle5{
+    width: 15%;
+    height: 15%;
+    border-radius: 100%;
+    border: 3.5px dotted #FF0000;
+}
+
+@keyframes firework{
+    from{transform: scale(0);opacity: 1.5;visibility: visible;}
+    to{transform: scale(1.5);opacity: 0;}
+}
+
+
